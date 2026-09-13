@@ -1,0 +1,37 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
+}
+
+group = 'com.mmocrpg'
+version = '1.0.0'
+description = 'MMO RPG - Advanced RPG system for Paper 1.21+'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven { url = 'https://repo.papermc.io/repository/maven-public/' }
+}
+
+dependencies {
+    compileOnly 'io.papermc.paper:paper-api:1.21.4-R0.1-SNAPSHOT'
+    implementation 'com.zaxxer:HikariCP:5.1.0'
+    implementation 'com.google.guava:guava:33.4.0-jre'
+}
+
+shadowJar {
+    archiveClassifier = ''
+    relocate 'com.zaxxer.hikari', 'com.mmocrpg.lib.hikari'
+    relocate 'com.google.common', 'com.mmocrpg.lib.guava'
+}
+
+build.dependsOn shadowJar
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}

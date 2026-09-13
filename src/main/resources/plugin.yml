@@ -1,0 +1,57 @@
+name: MMORpg
+version: ${version}
+main: com.mmocrpg.MMORpg
+api-version: '1.21'
+description: Advanced MMO-style RPG system
+authors: [MMORpg Team]
+
+commands:
+  class:
+    description: Choose or view your class
+    usage: /class <class|info>
+    permission: mmocrpg.class
+  skill:
+    description: Manage and use skills
+    usage: /skill <list|info|bind|use>
+    permission: mmocrpg.skill
+  quest:
+    description: Quest management
+    usage: /quest <list|accept|abandon|info>
+    permission: mmocrpg.quest
+  guild:
+    description: Guild management
+    usage: /guild <create|join|leave|info|chat|invite|kick|list>
+    permission: mmocrpg.guild
+  stats:
+    description: View your RPG stats
+    usage: /stats [player]
+    permission: mmocrpg.stats
+
+permissions:
+  mmocrpg.class:
+    description: Use the class command
+    default: true
+  mmocrpg.skill:
+    description: Use the skill command
+    default: true
+  mmocrpg.quest:
+    description: Use the quest command
+    default: true
+  mmocrpg.guild:
+    description: Use the guild command
+    default: true
+  mmocrpg.stats:
+    description: Use the stats command
+    default: true
+  mmocrpg.admin:
+    description: Admin permissions
+    default: op
+  mmocrpg.admin.reload:
+    description: Reload the plugin config
+    default: op
+  mmocrpg.skill.cooldown.bypass:
+    description: Bypass skill cooldowns
+    default: op
+  mmocrpg.class.change:
+    description: Allow changing class
+    default: true

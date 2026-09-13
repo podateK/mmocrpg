@@ -1,0 +1,136 @@
+messages:
+  prefix: "&#a0a0ff&l[MMORpg] &r"
+  no-class: "&cYou must choose a class first! Use /class <class>"
+  class-selected: "&aYou have chosen the &e%class% &aclass!"
+  class-locked: "&cYou already have a class. Reach level 5 to change."
+  skill-learned: "&aYou learned &e%skill%&a!"
+  skill-not-enough-sp: "&cNot enough skill points! You have %sp% SP."
+  skill-locked: "&cYou must learn &e%prerequisite% &cfirst!"
+  skill-max-level: "&cThis skill is already at max level!"
+  quest-accepted: "&aAccepted quest: &e%quest%"
+  quest-completed: "&6Quest completed: &e%quest% &6! Rewards: %rewards%"
+  quest-already-active: "&cYou already have this quest active!"
+  quest-not-found: "&cQuest not found!"
+  quest-objective-progress: "&7[%current%/%required%] %description%"
+  guild-created: "&aGuild &e%name% &acreated! Invite members with /guild invite <player>"
+  guild-join: "&aYou joined &e%name%&a!"
+  guild-leave: "&7You left &e%name%&7."
+  guild-not-found: "&cGuild not found!"
+  guild-already-in-guild: "&cYou are already in a guild!"
+  guild-invite-sent: "&aInvite sent to &e%player%&a!"
+  guild-invite-received: "&e%player% &ahas invited you to &e%guild%&a. Use /guild join %guild%"
+  guild-invite-accepted: "&a%player% joined the guild!"
+  guild-kick: "&c%player% has been kicked from the guild."
+  guild-no-permission: "&cYou don't have permission to do that!"
+  guild-disbanded: "&e%name% &ahas been disbanded."
+  stats-header: "&#a0a0ff&l===== %player% Stats ====="
+  stats-level: "&eLevel: &f%level%"
+  stats-xp: "&eXP: &f%current%/%required%"
+  stats-class: "&eClass: &f%class%"
+  stats-str: "&eSTR: &f%value% (+%bonus%)"
+  stats-dex: "&eDEX: &f%value% (+%bonus%)"
+  stats-int: "&eINT: &f%value% (+%bonus%)"
+  stats-vit: "&eVIT: &f%value% (+%bonus%)"
+  stats-lck: "&eLCK: &f%value% (+%bonus%)"
+  stats-hp: "&eHP: &f%current%/%max%"
+  stats-mp: "&eMP: &f%current%/%max%"
+  stats-sp: "&eSP: &f%value%"
+  stats-damage: "&eDamage: &f%min%-%max%"
+  stats-defense: "&eDefense: &f%value%"
+  combat-crit: "&6Critical Hit! &e+%damage% damage"
+  combat-block: "&aBlocked! Reduced damage by %amount%"
+  loot-drop: "&6[LOOT] &e%item% &7(%rarity%)"
+
+config-version: 1
+
+player:
+  starting-class: none
+  stat-points-per-level: 3
+  skill-points-per-level: 1
+  base-health: 20
+  base-mana: 50
+  health-per-vit: 2
+  mana-per-int: 3
+  max-level: 100
+
+combat:
+  base-damage: 1.0
+  damage-per-str: 0.5
+  defense-per-vit: 0.3
+  crit-base-chance: 0.05
+  crit-per-lck: 0.005
+  crit-multiplier: 1.5
+  dodge-base-chance: 0.02
+  dodge-per-dex: 0.004
+  block-base-chance: 0.03
+  armor-toughness: 0.04
+
+xp:
+  base-xp: 100
+  curve-multiplier: 1.15
+  xp-per-kill: 50
+  xp-per-quest: 200
+  xp-per-level-bonus: 10
+
+classes:
+  warrior:
+    display-name: "&cWarrior"
+    description: "A mighty fighter with high HP and physical damage"
+    base-stats:
+      STR: 15
+      DEX: 8
+      INT: 5
+      VIT: 12
+      LCK: 5
+    health-multiplier: 1.5
+    mana-multiplier: 0.8
+  mage:
+    display-name: "&9Mage"
+    description: "A powerful spellcaster with high INT and mana"
+    base-stats:
+      STR: 5
+      DEX: 8
+      INT: 15
+      VIT: 6
+      LCK: 6
+    health-multiplier: 0.8
+    mana-multiplier: 2.0
+  rogue:
+    display-name: "&5Rogue"
+    description: "A swift assassin with high DEX and crit chance"
+    base-stats:
+      STR: 8
+      DEX: 15
+      INT: 6
+      VIT: 6
+      LCK: 10
+    health-multiplier: 0.9
+    mana-multiplier: 1.0
+  archer:
+    display-name: "&aArcher"
+    description: "A ranged specialist with balanced stats"
+    base-stats:
+      STR: 10
+      DEX: 12
+      INT: 6
+      VIT: 8
+      LCK: 9
+    health-multiplier: 1.0
+    mana-multiplier: 1.0
+
+guild:
+  max-members: 50
+  create-cost: 1000
+  require-level: 5
+
+quests:
+  max-active: 5
+  daily-reset-hours: 24
+
+hud:
+  action-bar-enabled: true
+  scoreboard-enabled: true
+  update-interval: 20
+
+particles:
+  skill-effects-enabled: true
